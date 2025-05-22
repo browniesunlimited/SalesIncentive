@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<item>
+  <version>1.0.0.0</version>
+  <url>https://github.com/browniesunlimited/SalesIncentive/blob/master/SalesIncentive/bin/Release/SalesIncentive.exe</url>
+  <changelog>https://raw.githubusercontent.com/YourUsername/YourRepo/main/releases/changelog.txt</changelog>
+  <mandatory>false</mandatory>
+</item>
