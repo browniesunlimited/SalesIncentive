@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="82f5623dac334376b7e8fed6ab9ac075" Name="Diagram1" ZoomLevel="38">
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.T_SALES_INCENTIVE_AREA" Width="3.25" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.T_SALES_INCENTIVE_DISTRIBUTION_CREW" Width="3.25" PointX="4.25" PointY="0.875" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.T_SALES_INCENTIVE_SPECIAL" Width="3.25" PointX="8.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.T_SALES_INCENTIVE_NEW_SCRF" Width="2.25" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.M_EMPLOYEE" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.SalesIncentiveVariance" Width="2" PointX="7.625" PointY="6.5" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.M_OUTLET" Width="1.5" PointX="9.375" PointY="10.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.INCENTIVE_DAYS_WORK" Width="2.75" PointX="10.375" PointY="6.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.INCENTIVE_SCRF" Width="1.5" PointX="11.375" PointY="10.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.T_SALES_INCENTIVE_NEW_BANK_FILE" Width="1.5" PointX="5.375" PointY="10.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.RPT_SALES_INCENTIVE_QOUTLET" Width="1.5" PointX="12.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.RPT_SALES_INCENTIVE_QAREA" Width="1.5" PointX="13.375" PointY="10.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.RPT_AREA_INCENTIVE" Width="1.5" PointX="14.375" PointY="0.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.RPT_CREW_INCENTIVE" Width="1.5" PointX="14.375" PointY="3.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.NEW_SALES_INCENTIVE_VIEW" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="KHAS_BO_BUModel.NEW_SALES_INCENTIVE_AREA_BNK" Width="1.5" PointX="14.375" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

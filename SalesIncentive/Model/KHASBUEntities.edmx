@@ -1,0 +1,1254 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="KHAS_BO_BUModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="INCENTIVE_SCRF">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMPID" Type="int" Nullable="false" />
+          <Property Name="IF_SCRF" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="DATE_MONTH" Type="int" Nullable="false" />
+          <Property Name="DATE_YEAR" Type="int" Nullable="false" />
+          <Property Name="EMP_NAME" Type="varchar" MaxLength="300" Nullable="false" />
+        </EntityType>
+        <EntityType Name="M_EMPLOYEE">
+          <Key>
+            <PropertyRef Name="EMPID" />
+          </Key>
+          <Property Name="EMPID" Type="int" Nullable="false" />
+          <Property Name="LASTNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FIRSTNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MI" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="EMPLOYMENT_STATUS" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DIVISION" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DEPARTMENT" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="SHORTNAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ACTIVE" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="EXPIRED" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="PASSKEY" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="LOGIN_FAILED" Type="int" Nullable="false" />
+          <Property Name="LOCKED" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ROLES" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="USER_PROGRAM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MODIFIED_BY" Type="int" Nullable="false" />
+          <Property Name="MODIFIED_DATE" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="SYSTEM_DATE" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="M_OUTLET">
+          <Key>
+            <PropertyRef Name="OUTLET_NO" />
+          </Key>
+          <Property Name="OUTLET_NO" Type="int" Nullable="false" />
+          <Property Name="OUTLET_NAME" Type="varchar" MaxLength="500" />
+          <Property Name="OUTLET_TYPE_DESC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TRADE_NAME" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MALL_DESC" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AREA_CODE" Type="int" Nullable="false" />
+          <Property Name="LOCATION" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BIR_TIN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BIR_ACCDTN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MACHINE_NO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OUTLET_ADDRESS" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="CONTACT_PERSON" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BR_CODE" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="N_CHECK" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="CLAS_C" Type="int" Nullable="false" />
+          <Property Name="CLAS_TRD_C" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="STOR_NO" Type="int" Nullable="false" />
+          <Property Name="TSL_SRL" Type="char" MaxLength="30" Nullable="false" />
+          <Property Name="NAV_CODE" Type="int" Nullable="false" />
+          <Property Name="MIN" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PERMIT_NO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MODIFIED_BY" Type="int" Nullable="false" />
+          <Property Name="MODIFIED_DATE" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RPT_AREA_INCENTIVE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AREA_NAME" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="INCENTIVE" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SPECIAL" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TOTAL" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RPT_CREW_INCENTIVE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BRANCH" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="EMPLOYEE_ID" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="NAME" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="DAYS_WORK" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="INCENTIVE_PER_DAY" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SPECIAL_PER_DATE" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TOTAL_INCENTIVE" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TOTAL_SPECIAL" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="GRAND_TOTAL" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RPT_SALES_INCENTIVE_QAREA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="AREA_MANAGER" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="TARGET_NET" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ACTUAL_NET" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="INCREMENTAL" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DAYEND" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="VARIANCE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="VARIANCE_PERCENT" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="SPOILAGE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SPOILAGE_PERCENT" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QUALIFIED" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RPT_SALES_INCENTIVE_QOUTLET">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="AREA_MANAGER" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="OUTLET_NO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OUTLET_NAME" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="TARGET_NET" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TARGET_ACTUAL" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="INCREMENTAL" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CLUSTER_INCENTIVE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CREW_INCENTIVE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CREW_SPECIAL" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CLUSTER_SPECIAL" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DAYEND_50" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="DAYEND_20" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="VARIANCE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SPOILAGE" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="COMPLAIN" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="QUALIFIED" Type="varchar" MaxLength="1" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SalesIncentiveVariance">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OutletNo" Type="int" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ModifiedBy" Type="int" Nullable="false" />
+          <Property Name="ModifiedDate" Type="datetime" Nullable="false" />
+          <Property Name="DateMonth" Type="int" Nullable="false" />
+          <Property Name="DateYear" Type="int" Nullable="false" />
+          <Property Name="Spoilage" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_SALES_INCENTIVE_AREA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="EMPID" Type="int" />
+          <Property Name="AREA_NAME" Type="varchar" MaxLength="150" />
+          <Property Name="TARGET_SALES" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="INCENTIVE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PERIOD_FROM" Type="varchar" MaxLength="50" />
+          <Property Name="PERIOD_TO" Type="varchar" MaxLength="50" />
+          <Property Name="GENERATED_BY" Type="int" />
+          <Property Name="GENERATED_DATE" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN1" Type="nvarchar" MaxLength="50" />
+          <Property Name="COLUMN2" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN3" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN4" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN5" Type="varchar" MaxLength="50" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_SALES_INCENTIVE_DISTRIBUTION_CREW">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BRANCH" Type="varchar" MaxLength="100" />
+          <Property Name="OUTLET_NO" Type="int" />
+          <Property Name="EMPID" Type="int" />
+          <Property Name="LASTNAME" Type="varchar" MaxLength="50" />
+          <Property Name="FIRSTNAME" Type="varchar" MaxLength="50" />
+          <Property Name="TARGET_SALES" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="INCENTIVE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DAYS_WORKED_PER_EMP" Type="int" />
+          <Property Name="TOTAL_DAYS_WORKED" Type="int" />
+          <Property Name="INCENTIVE_PER_DAY" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TOTAL_INCENTIVE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PERIOD_FROM" Type="varchar" MaxLength="50" />
+          <Property Name="PERIOD_TO" Type="varchar" MaxLength="50" />
+          <Property Name="GENERATED_BY" Type="int" />
+          <Property Name="GENERATED_DATE" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN1" Type="nvarchar" MaxLength="50" />
+          <Property Name="COLUMN2" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN3" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="COLUMN4" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN5" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_SALES_INCENTIVE_NEW_BANK_FILE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EMPID" Type="int" />
+          <Property Name="EMP_NAME" Type="varchar" MaxLength="300" />
+          <Property Name="BANK_ACCOUNT" Type="nvarchar" MaxLength="50" />
+          <Property Name="INCENTIVE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MONTH_DATE" Type="int" />
+          <Property Name="YEAR_DATE" Type="int" />
+          <Property Name="PARTICULARS" Type="varchar" MaxLength="150" />
+          <Property Name="GENERATED_BY" Type="int" />
+          <Property Name="GENERATED_DATE" Type="varchar" MaxLength="50" />
+          <Property Name="GROUP1" Type="varchar" MaxLength="100" />
+          <Property Name="GROUP2" Type="varchar" MaxLength="100" />
+          <Property Name="GROUP3" Type="varchar" MaxLength="100" />
+          <Property Name="GROUP4" Type="varchar" MaxLength="100" />
+          <Property Name="GROUP5" Type="varchar" MaxLength="100" />
+          <Property Name="GROUP6" Type="varchar" MaxLength="100" />
+          <Property Name="GROUP7" Type="varchar" MaxLength="100" />
+          <Property Name="GROUP8" Type="varchar" MaxLength="100" />
+          <Property Name="FINAL_PRODUCT" Type="varchar" MaxLength="100" />
+          <Property Name="PC_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="COLUMN1" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN2" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN3" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN4" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN5" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_SALES_INCENTIVE_NEW_SCRF">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="EMPID" Type="int" />
+          <Property Name="NAME" Type="varchar" MaxLength="250" />
+          <Property Name="BRANCH" Type="varchar" MaxLength="100" />
+          <Property Name="SCRF" Type="varchar" MaxLength="5" />
+          <Property Name="PERIOD_FROM" Type="varchar" MaxLength="50" />
+          <Property Name="PERIOD_TO" Type="varchar" MaxLength="50" />
+          <Property Name="MODIFIED_DATE" Type="varchar" MaxLength="50" />
+          <Property Name="MODIFIED_BY" Type="int" />
+          <Property Name="COLUMN1" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN2" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN3" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN4" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN5" Type="varchar" MaxLength="50" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="T_SALES_INCENTIVE_SPECIAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="EMPID" Type="int" />
+          <Property Name="EMPNAME" Type="varchar" MaxLength="250" />
+          <Property Name="ACTUAL_SALES" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TARGET_SALES" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="INCENTIVE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="DAYS_WORKED_PER_EMP" Type="int" />
+          <Property Name="TOTAL_DAYS_WORKED" Type="int" />
+          <Property Name="INCENTIVE_PER_DAY" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TOTAL_INCENTIVE" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PERIOD_FROM" Type="varchar" MaxLength="50" />
+          <Property Name="PERIOD_TO" Type="varchar" MaxLength="50" />
+          <Property Name="GENERATED_BY" Type="int" />
+          <Property Name="GENERATED_DATE" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN1" Type="nvarchar" MaxLength="50" />
+          <Property Name="COLUMN2" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN3" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN4" Type="varchar" MaxLength="50" />
+          <Property Name="COLUMN5" Type="varchar" MaxLength="50" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KHAS_BO_BU.dbo.INCENTIVE_DAYS_WORK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="INCENTIVE_DAYS_WORK">
+          <Key>
+            <PropertyRef Name="EMPID" />
+          </Key>
+          <Property Name="EMPID" Type="int" Nullable="false" />
+          <Property Name="EMP_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="NET" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="OUTLET_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="DTR_DATE" Type="varchar" MaxLength="20" />
+          <Property Name="OUTLET_NO" Type="int" />
+          <Property Name="DEPARTMENT" Type="varchar" MaxLength="50" />
+          <Property Name="MONTH" Type="int" />
+          <Property Name="YEAR" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KHAS_BO_BU.dbo.NEW_SALES_INCENTIVE_AREA_BNK' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NEW_SALES_INCENTIVE_AREA_BNK">
+          <Key>
+            <PropertyRef Name="EMPID" />
+          </Key>
+          <Property Name="EMPID" Type="int" Nullable="false" />
+          <Property Name="BANK_ACCT_NO" Type="nchar" MaxLength="20" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'KHAS_BO_BU.dbo.NEW_SALES_INCENTIVE_VIEW' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NEW_SALES_INCENTIVE_VIEW">
+          <Key>
+            <PropertyRef Name="TARGET_SALES" />
+            <PropertyRef Name="NET_TARGET" />
+            <PropertyRef Name="NETSALES" />
+            <PropertyRef Name="DAYEND50" />
+            <PropertyRef Name="DAYEND20" />
+            <PropertyRef Name="VARIANCE" />
+            <PropertyRef Name="SPOILAGE" />
+            <PropertyRef Name="COMPLAIN" />
+            <PropertyRef Name="EMP_COUNT" />
+            <PropertyRef Name="TOTAL_DAYS_WORK" />
+          </Key>
+          <Property Name="OUTLET_NO" Type="int" />
+          <Property Name="OUTLET_NAME" Type="varchar" MaxLength="150" />
+          <Property Name="MONTH" Type="int" />
+          <Property Name="YEAR" Type="int" />
+          <Property Name="TARGET_SALES" Type="decimal" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="NET_TARGET" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="NETSALES" Type="numeric" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="DAYEND50" Type="decimal" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="DAYEND20" Type="decimal" Precision="38" Scale="2" Nullable="false" />
+          <Property Name="VARIANCE" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SPOILAGE" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="EMPID" Type="int" />
+          <Property Name="EMP_NAME" Type="varchar" MaxLength="150" />
+          <Property Name="COMPLAIN" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="EMP_COUNT" Type="int" Nullable="false" />
+          <Property Name="TOTAL_DAYS_WORK" Type="int" Nullable="false" />
+        </EntityType>
+        <Function Name="AreaIncentiveByRam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodTo" Type="varchar" Mode="In" />
+          <Parameter Name="PeriodFrom" Type="varchar" Mode="In" />
+          <Parameter Name="DateToday" Type="varchar" Mode="In" />
+          <Parameter Name="User" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GenerateBankFileAreaByRam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodFrom" Type="varchar" Mode="In" />
+          <Parameter Name="PeriodTo" Type="varchar" Mode="In" />
+          <Parameter Name="DateToday" Type="varchar" Mode="In" />
+          <Parameter Name="User" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GenerateBankFileCrewByRam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodFrom" Type="varchar" Mode="In" />
+          <Parameter Name="PeriodTo" Type="varchar" Mode="In" />
+          <Parameter Name="DateToday" Type="varchar" Mode="In" />
+          <Parameter Name="User" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="GenerateBankFileSpecialByRam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodFrom" Type="varchar" Mode="In" />
+          <Parameter Name="PeriodTo" Type="varchar" Mode="In" />
+          <Parameter Name="DateToday" Type="varchar" Mode="In" />
+          <Parameter Name="User" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="OutletListForVariance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateMonth" Type="int" Mode="In" />
+          <Parameter Name="DateYear" Type="int" Mode="In" />
+        </Function>
+        <Function Name="PasswordByRam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Password" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SalesCrewIncentiveByRam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodTo" Type="varchar" Mode="In" />
+          <Parameter Name="PeriodFrom" Type="varchar" Mode="In" />
+          <Parameter Name="DateToday" Type="varchar" Mode="In" />
+          <Parameter Name="User" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SalesIncentiveByRam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodTo" Type="varchar" Mode="In" />
+          <Parameter Name="PeriodFrom" Type="varchar" Mode="In" />
+          <Parameter Name="DateToday" Type="varchar" Mode="In" />
+          <Parameter Name="User" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SCRFbyRam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodTo" Type="varchar" Mode="In" />
+          <Parameter Name="PeriodFrom" Type="varchar" Mode="In" />
+          <Parameter Name="DateToday" Type="varchar" Mode="In" />
+          <Parameter Name="User" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_DAYS_WORK_PER_OUTLET" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="DateMonth" Type="int" Mode="In" />
+          <Parameter Name="DateYear" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_DELETE_BANK_FILE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MonthDate" Type="int" Mode="In" />
+          <Parameter Name="YearDate" Type="int" Mode="In" />
+        </Function>
+        <Function Name="SP_INSERT_BANK_FILE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Month_Date" Type="int" Mode="In" />
+          <Parameter Name="Year_Date" Type="int" Mode="In" />
+          <Parameter Name="EmpID" Type="int" Mode="In" />
+          <Parameter Name="EmpName" Type="varchar" Mode="In" />
+          <Parameter Name="Incentive" Type="decimal" Mode="In" />
+          <Parameter Name="AcctNo" Type="varchar" Mode="In" />
+          <Parameter Name="GeneratedBy" Type="int" Mode="In" />
+          <Parameter Name="GeneratedDate" Type="varchar" Mode="In" />
+          <Parameter Name="Particulars" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="SP_UPDATE_FINAL_PRODUCT_BANKFILE" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ID" Type="bigint" Mode="In" />
+          <Parameter Name="FinalAmount" Type="bigint" Mode="In" />
+        </Function>
+        <Function Name="SpecialIncentivebyRam" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="PeriodTo" Type="varchar" Mode="In" />
+          <Parameter Name="PeriodFrom" Type="varchar" Mode="In" />
+          <Parameter Name="DateToday" Type="varchar" Mode="In" />
+          <Parameter Name="User" Type="varchar" Mode="In" />
+        </Function>
+        <EntityContainer Name="KHAS_BO_BUModelStoreContainer">
+          <EntitySet Name="INCENTIVE_SCRF" EntityType="Self.INCENTIVE_SCRF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_EMPLOYEE" EntityType="Self.M_EMPLOYEE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="M_OUTLET" EntityType="Self.M_OUTLET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RPT_AREA_INCENTIVE" EntityType="Self.RPT_AREA_INCENTIVE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RPT_CREW_INCENTIVE" EntityType="Self.RPT_CREW_INCENTIVE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RPT_SALES_INCENTIVE_QAREA" EntityType="Self.RPT_SALES_INCENTIVE_QAREA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RPT_SALES_INCENTIVE_QOUTLET" EntityType="Self.RPT_SALES_INCENTIVE_QOUTLET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SalesIncentiveVariance" EntityType="Self.SalesIncentiveVariance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SALES_INCENTIVE_AREA" EntityType="Self.T_SALES_INCENTIVE_AREA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SALES_INCENTIVE_DISTRIBUTION_CREW" EntityType="Self.T_SALES_INCENTIVE_DISTRIBUTION_CREW" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SALES_INCENTIVE_NEW_BANK_FILE" EntityType="Self.T_SALES_INCENTIVE_NEW_BANK_FILE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SALES_INCENTIVE_NEW_SCRF" EntityType="Self.T_SALES_INCENTIVE_NEW_SCRF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="T_SALES_INCENTIVE_SPECIAL" EntityType="Self.T_SALES_INCENTIVE_SPECIAL" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="INCENTIVE_DAYS_WORK" EntityType="Self.INCENTIVE_DAYS_WORK" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [INCENTIVE_DAYS_WORK].[EMPID] AS [EMPID], 
+    [INCENTIVE_DAYS_WORK].[EMP_NAME] AS [EMP_NAME], 
+    [INCENTIVE_DAYS_WORK].[NET] AS [NET], 
+    [INCENTIVE_DAYS_WORK].[OUTLET_NAME] AS [OUTLET_NAME], 
+    [INCENTIVE_DAYS_WORK].[DTR_DATE] AS [DTR_DATE], 
+    [INCENTIVE_DAYS_WORK].[OUTLET_NO] AS [OUTLET_NO], 
+    [INCENTIVE_DAYS_WORK].[DEPARTMENT] AS [DEPARTMENT], 
+    [INCENTIVE_DAYS_WORK].[MONTH] AS [MONTH], 
+    [INCENTIVE_DAYS_WORK].[YEAR] AS [YEAR]
+    FROM [dbo].[INCENTIVE_DAYS_WORK] AS [INCENTIVE_DAYS_WORK]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NEW_SALES_INCENTIVE_AREA_BNK" EntityType="Self.NEW_SALES_INCENTIVE_AREA_BNK" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [NEW_SALES_INCENTIVE_AREA_BNK].[EMPID] AS [EMPID], 
+    [NEW_SALES_INCENTIVE_AREA_BNK].[BANK_ACCT_NO] AS [BANK_ACCT_NO]
+    FROM [dbo].[NEW_SALES_INCENTIVE_AREA_BNK] AS [NEW_SALES_INCENTIVE_AREA_BNK]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NEW_SALES_INCENTIVE_VIEW" EntityType="Self.NEW_SALES_INCENTIVE_VIEW" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [NEW_SALES_INCENTIVE_VIEW].[OUTLET_NO] AS [OUTLET_NO], 
+    [NEW_SALES_INCENTIVE_VIEW].[OUTLET_NAME] AS [OUTLET_NAME], 
+    [NEW_SALES_INCENTIVE_VIEW].[MONTH] AS [MONTH], 
+    [NEW_SALES_INCENTIVE_VIEW].[YEAR] AS [YEAR], 
+    [NEW_SALES_INCENTIVE_VIEW].[TARGET_SALES] AS [TARGET_SALES], 
+    [NEW_SALES_INCENTIVE_VIEW].[NET_TARGET] AS [NET_TARGET], 
+    [NEW_SALES_INCENTIVE_VIEW].[NETSALES] AS [NETSALES], 
+    [NEW_SALES_INCENTIVE_VIEW].[DAYEND50] AS [DAYEND50], 
+    [NEW_SALES_INCENTIVE_VIEW].[DAYEND20] AS [DAYEND20], 
+    [NEW_SALES_INCENTIVE_VIEW].[VARIANCE] AS [VARIANCE], 
+    [NEW_SALES_INCENTIVE_VIEW].[SPOILAGE] AS [SPOILAGE], 
+    [NEW_SALES_INCENTIVE_VIEW].[EMPID] AS [EMPID], 
+    [NEW_SALES_INCENTIVE_VIEW].[EMP_NAME] AS [EMP_NAME], 
+    [NEW_SALES_INCENTIVE_VIEW].[COMPLAIN] AS [COMPLAIN], 
+    [NEW_SALES_INCENTIVE_VIEW].[EMP_COUNT] AS [EMP_COUNT], 
+    [NEW_SALES_INCENTIVE_VIEW].[TOTAL_DAYS_WORK] AS [TOTAL_DAYS_WORK]
+    FROM [dbo].[NEW_SALES_INCENTIVE_VIEW] AS [NEW_SALES_INCENTIVE_VIEW]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="KHAS_BO_BUModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="KHAS_BO_BUEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="SalesIncentiveByRam">
+            <Parameter Name="PeriodTo" Mode="In" Type="String" />
+            <Parameter Name="PeriodFrom" Mode="In" Type="String" />
+            <Parameter Name="DateToday" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SalesCrewIncentiveByRam">
+            <Parameter Name="PeriodTo" Mode="In" Type="String" />
+            <Parameter Name="PeriodFrom" Mode="In" Type="String" />
+            <Parameter Name="DateToday" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="AreaIncentiveByRam">
+            <Parameter Name="PeriodTo" Mode="In" Type="String" />
+            <Parameter Name="PeriodFrom" Mode="In" Type="String" />
+            <Parameter Name="DateToday" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="SpecialIncentivebyRam">
+            <Parameter Name="PeriodTo" Mode="In" Type="String" />
+            <Parameter Name="PeriodFrom" Mode="In" Type="String" />
+            <Parameter Name="DateToday" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="T_SALES_INCENTIVE_AREA" EntityType="KHAS_BO_BUModel.T_SALES_INCENTIVE_AREA" />
+          <EntitySet Name="T_SALES_INCENTIVE_DISTRIBUTION_CREW" EntityType="KHAS_BO_BUModel.T_SALES_INCENTIVE_DISTRIBUTION_CREW" />
+          <EntitySet Name="T_SALES_INCENTIVE_SPECIAL" EntityType="KHAS_BO_BUModel.T_SALES_INCENTIVE_SPECIAL" />
+          <EntitySet Name="T_SALES_INCENTIVE_NEW_SCRF" EntityType="KHAS_BO_BUModel.T_SALES_INCENTIVE_NEW_SCRF" />
+          <FunctionImport Name="SCRFbyRam">
+            <Parameter Name="PeriodTo" Mode="In" Type="String" />
+            <Parameter Name="PeriodFrom" Mode="In" Type="String" />
+            <Parameter Name="DateToday" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="M_EMPLOYEE" EntityType="KHAS_BO_BUModel.M_EMPLOYEE" />
+          <FunctionImport Name="GenerateBankFileCrewByRam">
+            <Parameter Name="PeriodFrom" Mode="In" Type="String" />
+            <Parameter Name="PeriodTo" Mode="In" Type="String" />
+            <Parameter Name="DateToday" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GenerateBankFileAreaByRam">
+            <Parameter Name="PeriodFrom" Mode="In" Type="String" />
+            <Parameter Name="PeriodTo" Mode="In" Type="String" />
+            <Parameter Name="DateToday" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="GenerateBankFileSpecialByRam">
+            <Parameter Name="PeriodFrom" Mode="In" Type="String" />
+            <Parameter Name="PeriodTo" Mode="In" Type="String" />
+            <Parameter Name="DateToday" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="PasswordByRam" ReturnType="Collection(String)">
+          <Parameter Name="Password" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="SalesIncentiveVariances" EntityType="KHAS_BO_BUModel.SalesIncentiveVariance" />
+          <EntitySet Name="M_OUTLET" EntityType="KHAS_BO_BUModel.M_OUTLET" />
+          <FunctionImport Name="OutletListForVariance" ReturnType="Collection(KHAS_BO_BUModel.OutletListForVariance_Result)">
+            <Parameter Name="DateMonth" Mode="In" Type="Int32" />
+            <Parameter Name="DateYear" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="INCENTIVE_DAYS_WORK" EntityType="KHAS_BO_BUModel.INCENTIVE_DAYS_WORK" />
+          <EntitySet Name="INCENTIVE_SCRF" EntityType="KHAS_BO_BUModel.INCENTIVE_SCRF" />
+          <FunctionImport Name="SP_DAYS_WORK_PER_OUTLET" ReturnType="Collection(KHAS_BO_BUModel.SP_DAYS_WORK_PER_OUTLET_Result1)">
+            <Parameter Name="DateMonth" Mode="In" Type="Int32" />
+            <Parameter Name="DateYear" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="T_SALES_INCENTIVE_NEW_BANK_FILE" EntityType="KHAS_BO_BUModel.T_SALES_INCENTIVE_NEW_BANK_FILE" />
+          <FunctionImport Name="SP_DELETE_BANK_FILE">
+            <Parameter Name="MonthDate" Mode="In" Type="Int32" />
+            <Parameter Name="YearDate" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="SP_UPDATE_FINAL_PRODUCT_BANKFILE">
+            <Parameter Name="ID" Mode="In" Type="Int64" />
+            <Parameter Name="FinalAmount" Mode="In" Type="Int64" />
+          </FunctionImport>
+          <FunctionImport Name="SP_INSERT_BANK_FILE">
+            <Parameter Name="Month_Date" Mode="In" Type="Int32" />
+            <Parameter Name="Year_Date" Mode="In" Type="Int32" />
+            <Parameter Name="EmpID" Mode="In" Type="Int32" />
+            <Parameter Name="EmpName" Mode="In" Type="String" />
+            <Parameter Name="Incentive" Mode="In" Type="Decimal" />
+            <Parameter Name="AcctNo" Mode="In" Type="String" />
+            <Parameter Name="GeneratedBy" Mode="In" Type="Int32" />
+            <Parameter Name="GeneratedDate" Mode="In" Type="String" />
+            <Parameter Name="Particulars" Mode="In" Type="String" />
+          </FunctionImport>
+          <EntitySet Name="RPT_SALES_INCENTIVE_QOUTLET" EntityType="KHAS_BO_BUModel.RPT_SALES_INCENTIVE_QOUTLET" />
+          <EntitySet Name="RPT_SALES_INCENTIVE_QAREA" EntityType="KHAS_BO_BUModel.RPT_SALES_INCENTIVE_QAREA" />
+          <EntitySet Name="RPT_AREA_INCENTIVE" EntityType="KHAS_BO_BUModel.RPT_AREA_INCENTIVE" />
+          <EntitySet Name="RPT_CREW_INCENTIVE" EntityType="KHAS_BO_BUModel.RPT_CREW_INCENTIVE" />
+          <EntitySet Name="NEW_SALES_INCENTIVE_VIEW" EntityType="KHAS_BO_BUModel.NEW_SALES_INCENTIVE_VIEW" />
+          <EntitySet Name="NEW_SALES_INCENTIVE_AREA_BNK" EntityType="KHAS_BO_BUModel.NEW_SALES_INCENTIVE_AREA_BNK" />
+        </EntityContainer>
+        <EntityType Name="T_SALES_INCENTIVE_AREA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="EMPID" Type="Int32" />
+          <Property Name="AREA_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="TARGET_SALES" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="INCENTIVE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PERIOD_FROM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PERIOD_TO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GENERATED_BY" Type="Int32" />
+          <Property Name="GENERATED_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="COLUMN2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="T_SALES_INCENTIVE_DISTRIBUTION_CREW">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BRANCH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OUTLET_NO" Type="Int32" />
+          <Property Name="EMPID" Type="Int32" />
+          <Property Name="LASTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FIRSTNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TARGET_SALES" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="INCENTIVE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DAYS_WORKED_PER_EMP" Type="Int32" />
+          <Property Name="TOTAL_DAYS_WORKED" Type="Int32" />
+          <Property Name="INCENTIVE_PER_DAY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TOTAL_INCENTIVE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PERIOD_FROM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PERIOD_TO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GENERATED_BY" Type="Int32" />
+          <Property Name="GENERATED_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="COLUMN2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN3" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="COLUMN4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_SALES_INCENTIVE_SPECIAL">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="EMPID" Type="Int32" />
+          <Property Name="EMPNAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ACTUAL_SALES" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TARGET_SALES" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="INCENTIVE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="DAYS_WORKED_PER_EMP" Type="Int32" />
+          <Property Name="TOTAL_DAYS_WORKED" Type="Int32" />
+          <Property Name="INCENTIVE_PER_DAY" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TOTAL_INCENTIVE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PERIOD_FROM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PERIOD_TO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GENERATED_BY" Type="Int32" />
+          <Property Name="GENERATED_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="COLUMN2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="T_SALES_INCENTIVE_NEW_SCRF">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="EMPID" Type="Int32" />
+          <Property Name="NAME" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="BRANCH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SCRF" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="PERIOD_FROM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PERIOD_TO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_BY" Type="Int32" />
+          <Property Name="COLUMN1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="M_EMPLOYEE">
+          <Key>
+            <PropertyRef Name="EMPID" />
+          </Key>
+          <Property Name="EMPID" Type="Int32" Nullable="false" />
+          <Property Name="LASTNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FIRSTNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MI" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="EMPLOYMENT_STATUS" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DIVISION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DEPARTMENT" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SHORTNAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ACTIVE" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="EXPIRED" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="PASSKEY" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="LOGIN_FAILED" Type="Int32" Nullable="false" />
+          <Property Name="LOCKED" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ROLES" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USER_PROGRAM" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_BY" Type="Int32" Nullable="false" />
+          <Property Name="MODIFIED_DATE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SYSTEM_DATE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="SalesIncentiveVariance">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="OutletNo" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ModifiedBy" Type="Int32" Nullable="false" />
+          <Property Name="ModifiedDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DateMonth" Type="Int32" Nullable="false" />
+          <Property Name="DateYear" Type="Int32" Nullable="false" />
+          <Property Name="Spoilage" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="M_OUTLET">
+          <Key>
+            <PropertyRef Name="OUTLET_NO" />
+          </Key>
+          <Property Name="OUTLET_NO" Type="Int32" Nullable="false" />
+          <Property Name="OUTLET_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="OUTLET_TYPE_DESC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TRADE_NAME" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MALL_DESC" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AREA_CODE" Type="Int32" Nullable="false" />
+          <Property Name="LOCATION" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BIR_TIN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BIR_ACCDTN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MACHINE_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OUTLET_ADDRESS" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="CONTACT_PERSON" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BR_CODE" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="N_CHECK" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="CLAS_C" Type="Int32" Nullable="false" />
+          <Property Name="CLAS_TRD_C" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="STOR_NO" Type="Int32" Nullable="false" />
+          <Property Name="TSL_SRL" Type="String" Nullable="false" MaxLength="30" FixedLength="true" Unicode="false" />
+          <Property Name="NAV_CODE" Type="Int32" Nullable="false" />
+          <Property Name="MIN" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PERMIT_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MODIFIED_BY" Type="Int32" Nullable="false" />
+          <Property Name="MODIFIED_DATE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="OutletListForVariance_Result">
+          <Property Type="Int32" Name="OUTLET_NO" Nullable="true" />
+          <Property Type="String" Name="OUTLET_NAME" Nullable="true" MaxLength="500" />
+        </ComplexType>
+        <EntityType Name="INCENTIVE_DAYS_WORK">
+          <Key>
+            <PropertyRef Name="EMPID" />
+          </Key>
+          <Property Name="EMPID" Type="Int32" Nullable="false" />
+          <Property Name="EMP_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NET" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="OUTLET_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DTR_DATE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="OUTLET_NO" Type="Int32" />
+          <Property Name="DEPARTMENT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MONTH" Type="Int32" />
+          <Property Name="YEAR" Type="Int32" />
+        </EntityType>
+        <ComplexType Name="SP_DAYS_WORK_PER_OUTLET_Result">
+          <Property Type="Int32" Name="EMPID" Nullable="true" />
+          <Property Type="String" Name="EMP_NAME" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OUTLET_NAME" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="DAYS_WORK" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="INCENTIVE_SCRF">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMPID" Type="Int32" Nullable="false" />
+          <Property Name="IF_SCRF" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="DATE_MONTH" Type="Int32" Nullable="false" />
+          <Property Name="DATE_YEAR" Type="Int32" Nullable="false" />
+          <Property Name="EMP_NAME" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="SP_DAYS_WORK_PER_OUTLET_Result1">
+          <Property Type="Int32" Name="EMPID" Nullable="true" />
+          <Property Type="String" Name="EMP_NAME" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="OUTLET_NAME" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="DAYS_WORK" Nullable="false" />
+          <Property Type="String" Name="BANK_ACCT_NO" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <EntityType Name="T_SALES_INCENTIVE_NEW_BANK_FILE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EMPID" Type="Int32" />
+          <Property Name="EMP_NAME" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="BANK_ACCOUNT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="INCENTIVE" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MONTH_DATE" Type="Int32" />
+          <Property Name="YEAR_DATE" Type="Int32" />
+          <Property Name="PARTICULARS" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="GENERATED_BY" Type="Int32" />
+          <Property Name="GENERATED_DATE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GROUP1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GROUP2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GROUP3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GROUP4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GROUP5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GROUP6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GROUP7" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GROUP8" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FINAL_PRODUCT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PC_NAME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN4" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="COLUMN5" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RPT_SALES_INCENTIVE_QOUTLET">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="AREA_MANAGER" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="OUTLET_NO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OUTLET_NAME" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="TARGET_NET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TARGET_ACTUAL" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="INCREMENTAL" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CLUSTER_INCENTIVE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CREW_INCENTIVE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CREW_SPECIAL" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CLUSTER_SPECIAL" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DAYEND_50" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DAYEND_20" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="VARIANCE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SPOILAGE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="COMPLAIN" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QUALIFIED" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RPT_SALES_INCENTIVE_QAREA">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="AREA_MANAGER" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="TARGET_NET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ACTUAL_NET" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="INCREMENTAL" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DAYEND" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="VARIANCE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="VARIANCE_PERCENT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SPOILAGE" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SPOILAGE_PERCENT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="QUALIFIED" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RPT_AREA_INCENTIVE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AREA_NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="INCENTIVE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SPECIAL" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TOTAL" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="RPT_CREW_INCENTIVE">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BRANCH" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="EMPLOYEE_ID" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DAYS_WORK" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="INCENTIVE_PER_DAY" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="SPECIAL_PER_DATE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TOTAL_INCENTIVE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TOTAL_SPECIAL" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="GRAND_TOTAL" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="NEW_SALES_INCENTIVE_VIEW">
+          <Key>
+            <PropertyRef Name="TARGET_SALES" />
+            <PropertyRef Name="NET_TARGET" />
+            <PropertyRef Name="NETSALES" />
+            <PropertyRef Name="DAYEND50" />
+            <PropertyRef Name="DAYEND20" />
+            <PropertyRef Name="VARIANCE" />
+            <PropertyRef Name="SPOILAGE" />
+            <PropertyRef Name="COMPLAIN" />
+            <PropertyRef Name="EMP_COUNT" />
+            <PropertyRef Name="TOTAL_DAYS_WORK" />
+          </Key>
+          <Property Name="OUTLET_NO" Type="Int32" />
+          <Property Name="OUTLET_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="MONTH" Type="Int32" />
+          <Property Name="YEAR" Type="Int32" />
+          <Property Name="TARGET_SALES" Type="Decimal" Nullable="false" Precision="38" Scale="2" />
+          <Property Name="NET_TARGET" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
+          <Property Name="NETSALES" Type="Decimal" Nullable="false" Precision="38" Scale="2" />
+          <Property Name="DAYEND50" Type="Decimal" Nullable="false" Precision="38" Scale="2" />
+          <Property Name="DAYEND20" Type="Decimal" Nullable="false" Precision="38" Scale="2" />
+          <Property Name="VARIANCE" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SPOILAGE" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="EMPID" Type="Int32" />
+          <Property Name="EMP_NAME" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="COMPLAIN" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="EMP_COUNT" Type="Int32" Nullable="false" />
+          <Property Name="TOTAL_DAYS_WORK" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="NEW_SALES_INCENTIVE_AREA_BNK">
+          <Key>
+            <PropertyRef Name="EMPID" />
+          </Key>
+          <Property Name="EMPID" Type="Int32" Nullable="false" />
+          <Property Name="BANK_ACCT_NO" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="KHAS_BO_BUModelStoreContainer" CdmEntityContainer="KHAS_BO_BUEntities">
+          <FunctionImportMapping FunctionImportName="SalesIncentiveByRam" FunctionName="KHAS_BO_BUModel.Store.SalesIncentiveByRam" />
+          <FunctionImportMapping FunctionImportName="SalesCrewIncentiveByRam" FunctionName="KHAS_BO_BUModel.Store.SalesCrewIncentiveByRam" />
+          <FunctionImportMapping FunctionImportName="AreaIncentiveByRam" FunctionName="KHAS_BO_BUModel.Store.AreaIncentiveByRam" />
+          <FunctionImportMapping FunctionImportName="SpecialIncentivebyRam" FunctionName="KHAS_BO_BUModel.Store.SpecialIncentivebyRam" />
+          <EntitySetMapping Name="T_SALES_INCENTIVE_AREA">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.T_SALES_INCENTIVE_AREA">
+              <MappingFragment StoreEntitySet="T_SALES_INCENTIVE_AREA">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="COLUMN5" ColumnName="COLUMN5" />
+                <ScalarProperty Name="COLUMN4" ColumnName="COLUMN4" />
+                <ScalarProperty Name="COLUMN3" ColumnName="COLUMN3" />
+                <ScalarProperty Name="COLUMN2" ColumnName="COLUMN2" />
+                <ScalarProperty Name="COLUMN1" ColumnName="COLUMN1" />
+                <ScalarProperty Name="GENERATED_DATE" ColumnName="GENERATED_DATE" />
+                <ScalarProperty Name="GENERATED_BY" ColumnName="GENERATED_BY" />
+                <ScalarProperty Name="PERIOD_TO" ColumnName="PERIOD_TO" />
+                <ScalarProperty Name="PERIOD_FROM" ColumnName="PERIOD_FROM" />
+                <ScalarProperty Name="INCENTIVE" ColumnName="INCENTIVE" />
+                <ScalarProperty Name="TARGET_SALES" ColumnName="TARGET_SALES" />
+                <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SALES_INCENTIVE_DISTRIBUTION_CREW">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.T_SALES_INCENTIVE_DISTRIBUTION_CREW">
+              <MappingFragment StoreEntitySet="T_SALES_INCENTIVE_DISTRIBUTION_CREW">
+                <ScalarProperty Name="COLUMN5" ColumnName="COLUMN5" />
+                <ScalarProperty Name="COLUMN4" ColumnName="COLUMN4" />
+                <ScalarProperty Name="COLUMN3" ColumnName="COLUMN3" />
+                <ScalarProperty Name="COLUMN2" ColumnName="COLUMN2" />
+                <ScalarProperty Name="COLUMN1" ColumnName="COLUMN1" />
+                <ScalarProperty Name="GENERATED_DATE" ColumnName="GENERATED_DATE" />
+                <ScalarProperty Name="GENERATED_BY" ColumnName="GENERATED_BY" />
+                <ScalarProperty Name="PERIOD_TO" ColumnName="PERIOD_TO" />
+                <ScalarProperty Name="PERIOD_FROM" ColumnName="PERIOD_FROM" />
+                <ScalarProperty Name="TOTAL_INCENTIVE" ColumnName="TOTAL_INCENTIVE" />
+                <ScalarProperty Name="INCENTIVE_PER_DAY" ColumnName="INCENTIVE_PER_DAY" />
+                <ScalarProperty Name="TOTAL_DAYS_WORKED" ColumnName="TOTAL_DAYS_WORKED" />
+                <ScalarProperty Name="DAYS_WORKED_PER_EMP" ColumnName="DAYS_WORKED_PER_EMP" />
+                <ScalarProperty Name="INCENTIVE" ColumnName="INCENTIVE" />
+                <ScalarProperty Name="TARGET_SALES" ColumnName="TARGET_SALES" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+                <ScalarProperty Name="OUTLET_NO" ColumnName="OUTLET_NO" />
+                <ScalarProperty Name="BRANCH" ColumnName="BRANCH" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SALES_INCENTIVE_SPECIAL">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.T_SALES_INCENTIVE_SPECIAL">
+              <MappingFragment StoreEntitySet="T_SALES_INCENTIVE_SPECIAL">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="COLUMN5" ColumnName="COLUMN5" />
+                <ScalarProperty Name="COLUMN4" ColumnName="COLUMN4" />
+                <ScalarProperty Name="COLUMN3" ColumnName="COLUMN3" />
+                <ScalarProperty Name="COLUMN2" ColumnName="COLUMN2" />
+                <ScalarProperty Name="COLUMN1" ColumnName="COLUMN1" />
+                <ScalarProperty Name="GENERATED_DATE" ColumnName="GENERATED_DATE" />
+                <ScalarProperty Name="GENERATED_BY" ColumnName="GENERATED_BY" />
+                <ScalarProperty Name="PERIOD_TO" ColumnName="PERIOD_TO" />
+                <ScalarProperty Name="PERIOD_FROM" ColumnName="PERIOD_FROM" />
+                <ScalarProperty Name="TOTAL_INCENTIVE" ColumnName="TOTAL_INCENTIVE" />
+                <ScalarProperty Name="INCENTIVE_PER_DAY" ColumnName="INCENTIVE_PER_DAY" />
+                <ScalarProperty Name="TOTAL_DAYS_WORKED" ColumnName="TOTAL_DAYS_WORKED" />
+                <ScalarProperty Name="DAYS_WORKED_PER_EMP" ColumnName="DAYS_WORKED_PER_EMP" />
+                <ScalarProperty Name="INCENTIVE" ColumnName="INCENTIVE" />
+                <ScalarProperty Name="TARGET_SALES" ColumnName="TARGET_SALES" />
+                <ScalarProperty Name="ACTUAL_SALES" ColumnName="ACTUAL_SALES" />
+                <ScalarProperty Name="EMPNAME" ColumnName="EMPNAME" />
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_SALES_INCENTIVE_NEW_SCRF">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.T_SALES_INCENTIVE_NEW_SCRF">
+              <MappingFragment StoreEntitySet="T_SALES_INCENTIVE_NEW_SCRF">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="COLUMN5" ColumnName="COLUMN5" />
+                <ScalarProperty Name="COLUMN4" ColumnName="COLUMN4" />
+                <ScalarProperty Name="COLUMN3" ColumnName="COLUMN3" />
+                <ScalarProperty Name="COLUMN2" ColumnName="COLUMN2" />
+                <ScalarProperty Name="COLUMN1" ColumnName="COLUMN1" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="PERIOD_TO" ColumnName="PERIOD_TO" />
+                <ScalarProperty Name="PERIOD_FROM" ColumnName="PERIOD_FROM" />
+                <ScalarProperty Name="SCRF" ColumnName="SCRF" />
+                <ScalarProperty Name="BRANCH" ColumnName="BRANCH" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SCRFbyRam" FunctionName="KHAS_BO_BUModel.Store.SCRFbyRam" />
+          <EntitySetMapping Name="M_EMPLOYEE">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.M_EMPLOYEE">
+              <MappingFragment StoreEntitySet="M_EMPLOYEE">
+                <ScalarProperty Name="SYSTEM_DATE" ColumnName="SYSTEM_DATE" />
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="USER_PROGRAM" ColumnName="USER_PROGRAM" />
+                <ScalarProperty Name="ROLES" ColumnName="ROLES" />
+                <ScalarProperty Name="LOCKED" ColumnName="LOCKED" />
+                <ScalarProperty Name="LOGIN_FAILED" ColumnName="LOGIN_FAILED" />
+                <ScalarProperty Name="PASSKEY" ColumnName="PASSKEY" />
+                <ScalarProperty Name="EXPIRED" ColumnName="EXPIRED" />
+                <ScalarProperty Name="ACTIVE" ColumnName="ACTIVE" />
+                <ScalarProperty Name="SHORTNAME" ColumnName="SHORTNAME" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+                <ScalarProperty Name="DIVISION" ColumnName="DIVISION" />
+                <ScalarProperty Name="EMPLOYMENT_STATUS" ColumnName="EMPLOYMENT_STATUS" />
+                <ScalarProperty Name="MI" ColumnName="MI" />
+                <ScalarProperty Name="FIRSTNAME" ColumnName="FIRSTNAME" />
+                <ScalarProperty Name="LASTNAME" ColumnName="LASTNAME" />
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GenerateBankFileCrewByRam" FunctionName="KHAS_BO_BUModel.Store.GenerateBankFileCrewByRam" />
+          <FunctionImportMapping FunctionImportName="GenerateBankFileAreaByRam" FunctionName="KHAS_BO_BUModel.Store.GenerateBankFileAreaByRam" />
+          <FunctionImportMapping FunctionImportName="GenerateBankFileSpecialByRam" FunctionName="KHAS_BO_BUModel.Store.GenerateBankFileSpecialByRam" />
+          <FunctionImportMapping FunctionImportName="PasswordByRam" FunctionName="KHAS_BO_BUModel.Store.PasswordByRam" />
+          <EntitySetMapping Name="SalesIncentiveVariances">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.SalesIncentiveVariance">
+              <MappingFragment StoreEntitySet="SalesIncentiveVariance">
+                <ScalarProperty Name="Spoilage" ColumnName="Spoilage" />
+                <ScalarProperty Name="DateYear" ColumnName="DateYear" />
+                <ScalarProperty Name="DateMonth" ColumnName="DateMonth" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="OutletNo" ColumnName="OutletNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="M_OUTLET">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.M_OUTLET">
+              <MappingFragment StoreEntitySet="M_OUTLET">
+                <ScalarProperty Name="MODIFIED_DATE" ColumnName="MODIFIED_DATE" />
+                <ScalarProperty Name="MODIFIED_BY" ColumnName="MODIFIED_BY" />
+                <ScalarProperty Name="PERMIT_NO" ColumnName="PERMIT_NO" />
+                <ScalarProperty Name="MIN" ColumnName="MIN" />
+                <ScalarProperty Name="NAV_CODE" ColumnName="NAV_CODE" />
+                <ScalarProperty Name="TSL_SRL" ColumnName="TSL_SRL" />
+                <ScalarProperty Name="STOR_NO" ColumnName="STOR_NO" />
+                <ScalarProperty Name="CLAS_TRD_C" ColumnName="CLAS_TRD_C" />
+                <ScalarProperty Name="CLAS_C" ColumnName="CLAS_C" />
+                <ScalarProperty Name="N_CHECK" ColumnName="N_CHECK" />
+                <ScalarProperty Name="BR_CODE" ColumnName="BR_CODE" />
+                <ScalarProperty Name="CONTACT_PERSON" ColumnName="CONTACT_PERSON" />
+                <ScalarProperty Name="OUTLET_ADDRESS" ColumnName="OUTLET_ADDRESS" />
+                <ScalarProperty Name="MACHINE_NO" ColumnName="MACHINE_NO" />
+                <ScalarProperty Name="BIR_ACCDTN" ColumnName="BIR_ACCDTN" />
+                <ScalarProperty Name="BIR_TIN" ColumnName="BIR_TIN" />
+                <ScalarProperty Name="LOCATION" ColumnName="LOCATION" />
+                <ScalarProperty Name="AREA_CODE" ColumnName="AREA_CODE" />
+                <ScalarProperty Name="MALL_DESC" ColumnName="MALL_DESC" />
+                <ScalarProperty Name="TRADE_NAME" ColumnName="TRADE_NAME" />
+                <ScalarProperty Name="OUTLET_TYPE_DESC" ColumnName="OUTLET_TYPE_DESC" />
+                <ScalarProperty Name="OUTLET_NAME" ColumnName="OUTLET_NAME" />
+                <ScalarProperty Name="OUTLET_NO" ColumnName="OUTLET_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="OutletListForVariance" FunctionName="KHAS_BO_BUModel.Store.OutletListForVariance">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KHAS_BO_BUModel.OutletListForVariance_Result">
+                <ScalarProperty Name="OUTLET_NO" ColumnName="OUTLET_NO" />
+                <ScalarProperty Name="OUTLET_NAME" ColumnName="OUTLET_NAME" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="INCENTIVE_DAYS_WORK">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.INCENTIVE_DAYS_WORK">
+              <MappingFragment StoreEntitySet="INCENTIVE_DAYS_WORK">
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="MONTH" ColumnName="MONTH" />
+                <ScalarProperty Name="DEPARTMENT" ColumnName="DEPARTMENT" />
+                <ScalarProperty Name="OUTLET_NO" ColumnName="OUTLET_NO" />
+                <ScalarProperty Name="DTR_DATE" ColumnName="DTR_DATE" />
+                <ScalarProperty Name="OUTLET_NAME" ColumnName="OUTLET_NAME" />
+                <ScalarProperty Name="NET" ColumnName="NET" />
+                <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="INCENTIVE_SCRF">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.INCENTIVE_SCRF">
+              <MappingFragment StoreEntitySet="INCENTIVE_SCRF">
+                <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+                <ScalarProperty Name="DATE_YEAR" ColumnName="DATE_YEAR" />
+                <ScalarProperty Name="DATE_MONTH" ColumnName="DATE_MONTH" />
+                <ScalarProperty Name="IF_SCRF" ColumnName="IF_SCRF" />
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_DAYS_WORK_PER_OUTLET" FunctionName="KHAS_BO_BUModel.Store.SP_DAYS_WORK_PER_OUTLET">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="KHAS_BO_BUModel.SP_DAYS_WORK_PER_OUTLET_Result1">
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+                <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+                <ScalarProperty Name="OUTLET_NAME" ColumnName="OUTLET_NAME" />
+                <ScalarProperty Name="DAYS_WORK" ColumnName="DAYS_WORK" />
+                <ScalarProperty Name="BANK_ACCT_NO" ColumnName="BANK_ACCT_NO" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="T_SALES_INCENTIVE_NEW_BANK_FILE">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.T_SALES_INCENTIVE_NEW_BANK_FILE">
+              <MappingFragment StoreEntitySet="T_SALES_INCENTIVE_NEW_BANK_FILE">
+                <ScalarProperty Name="COLUMN5" ColumnName="COLUMN5" />
+                <ScalarProperty Name="COLUMN4" ColumnName="COLUMN4" />
+                <ScalarProperty Name="COLUMN3" ColumnName="COLUMN3" />
+                <ScalarProperty Name="COLUMN2" ColumnName="COLUMN2" />
+                <ScalarProperty Name="COLUMN1" ColumnName="COLUMN1" />
+                <ScalarProperty Name="PC_NAME" ColumnName="PC_NAME" />
+                <ScalarProperty Name="FINAL_PRODUCT" ColumnName="FINAL_PRODUCT" />
+                <ScalarProperty Name="GROUP8" ColumnName="GROUP8" />
+                <ScalarProperty Name="GROUP7" ColumnName="GROUP7" />
+                <ScalarProperty Name="GROUP6" ColumnName="GROUP6" />
+                <ScalarProperty Name="GROUP5" ColumnName="GROUP5" />
+                <ScalarProperty Name="GROUP4" ColumnName="GROUP4" />
+                <ScalarProperty Name="GROUP3" ColumnName="GROUP3" />
+                <ScalarProperty Name="GROUP2" ColumnName="GROUP2" />
+                <ScalarProperty Name="GROUP1" ColumnName="GROUP1" />
+                <ScalarProperty Name="GENERATED_DATE" ColumnName="GENERATED_DATE" />
+                <ScalarProperty Name="GENERATED_BY" ColumnName="GENERATED_BY" />
+                <ScalarProperty Name="PARTICULARS" ColumnName="PARTICULARS" />
+                <ScalarProperty Name="YEAR_DATE" ColumnName="YEAR_DATE" />
+                <ScalarProperty Name="MONTH_DATE" ColumnName="MONTH_DATE" />
+                <ScalarProperty Name="INCENTIVE" ColumnName="INCENTIVE" />
+                <ScalarProperty Name="BANK_ACCOUNT" ColumnName="BANK_ACCOUNT" />
+                <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SP_DELETE_BANK_FILE" FunctionName="KHAS_BO_BUModel.Store.SP_DELETE_BANK_FILE" />
+          <FunctionImportMapping FunctionImportName="SP_UPDATE_FINAL_PRODUCT_BANKFILE" FunctionName="KHAS_BO_BUModel.Store.SP_UPDATE_FINAL_PRODUCT_BANKFILE" />
+          <FunctionImportMapping FunctionImportName="SP_INSERT_BANK_FILE" FunctionName="KHAS_BO_BUModel.Store.SP_INSERT_BANK_FILE" />
+          <EntitySetMapping Name="RPT_SALES_INCENTIVE_QOUTLET">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.RPT_SALES_INCENTIVE_QOUTLET">
+              <MappingFragment StoreEntitySet="RPT_SALES_INCENTIVE_QOUTLET">
+                <ScalarProperty Name="QUALIFIED" ColumnName="QUALIFIED" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="COMPLAIN" ColumnName="COMPLAIN" />
+                <ScalarProperty Name="SPOILAGE" ColumnName="SPOILAGE" />
+                <ScalarProperty Name="VARIANCE" ColumnName="VARIANCE" />
+                <ScalarProperty Name="DAYEND_20" ColumnName="DAYEND_20" />
+                <ScalarProperty Name="DAYEND_50" ColumnName="DAYEND_50" />
+                <ScalarProperty Name="CLUSTER_SPECIAL" ColumnName="CLUSTER_SPECIAL" />
+                <ScalarProperty Name="CREW_SPECIAL" ColumnName="CREW_SPECIAL" />
+                <ScalarProperty Name="CREW_INCENTIVE" ColumnName="CREW_INCENTIVE" />
+                <ScalarProperty Name="CLUSTER_INCENTIVE" ColumnName="CLUSTER_INCENTIVE" />
+                <ScalarProperty Name="INCREMENTAL" ColumnName="INCREMENTAL" />
+                <ScalarProperty Name="TARGET_ACTUAL" ColumnName="TARGET_ACTUAL" />
+                <ScalarProperty Name="TARGET_NET" ColumnName="TARGET_NET" />
+                <ScalarProperty Name="OUTLET_NAME" ColumnName="OUTLET_NAME" />
+                <ScalarProperty Name="OUTLET_NO" ColumnName="OUTLET_NO" />
+                <ScalarProperty Name="AREA_MANAGER" ColumnName="AREA_MANAGER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RPT_SALES_INCENTIVE_QAREA">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.RPT_SALES_INCENTIVE_QAREA">
+              <MappingFragment StoreEntitySet="RPT_SALES_INCENTIVE_QAREA">
+                <ScalarProperty Name="QUALIFIED" ColumnName="QUALIFIED" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SPOILAGE_PERCENT" ColumnName="SPOILAGE_PERCENT" />
+                <ScalarProperty Name="SPOILAGE" ColumnName="SPOILAGE" />
+                <ScalarProperty Name="VARIANCE_PERCENT" ColumnName="VARIANCE_PERCENT" />
+                <ScalarProperty Name="VARIANCE" ColumnName="VARIANCE" />
+                <ScalarProperty Name="DAYEND" ColumnName="DAYEND" />
+                <ScalarProperty Name="INCREMENTAL" ColumnName="INCREMENTAL" />
+                <ScalarProperty Name="ACTUAL_NET" ColumnName="ACTUAL_NET" />
+                <ScalarProperty Name="TARGET_NET" ColumnName="TARGET_NET" />
+                <ScalarProperty Name="AREA_MANAGER" ColumnName="AREA_MANAGER" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RPT_AREA_INCENTIVE">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.RPT_AREA_INCENTIVE">
+              <MappingFragment StoreEntitySet="RPT_AREA_INCENTIVE">
+                <ScalarProperty Name="TOTAL" ColumnName="TOTAL" />
+                <ScalarProperty Name="SPECIAL" ColumnName="SPECIAL" />
+                <ScalarProperty Name="INCENTIVE" ColumnName="INCENTIVE" />
+                <ScalarProperty Name="AREA_NAME" ColumnName="AREA_NAME" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RPT_CREW_INCENTIVE">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.RPT_CREW_INCENTIVE">
+              <MappingFragment StoreEntitySet="RPT_CREW_INCENTIVE">
+                <ScalarProperty Name="GRAND_TOTAL" ColumnName="GRAND_TOTAL" />
+                <ScalarProperty Name="TOTAL_SPECIAL" ColumnName="TOTAL_SPECIAL" />
+                <ScalarProperty Name="TOTAL_INCENTIVE" ColumnName="TOTAL_INCENTIVE" />
+                <ScalarProperty Name="SPECIAL_PER_DATE" ColumnName="SPECIAL_PER_DATE" />
+                <ScalarProperty Name="INCENTIVE_PER_DAY" ColumnName="INCENTIVE_PER_DAY" />
+                <ScalarProperty Name="DAYS_WORK" ColumnName="DAYS_WORK" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="EMPLOYEE_ID" ColumnName="EMPLOYEE_ID" />
+                <ScalarProperty Name="BRANCH" ColumnName="BRANCH" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NEW_SALES_INCENTIVE_VIEW">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.NEW_SALES_INCENTIVE_VIEW">
+              <MappingFragment StoreEntitySet="NEW_SALES_INCENTIVE_VIEW">
+                <ScalarProperty Name="TOTAL_DAYS_WORK" ColumnName="TOTAL_DAYS_WORK" />
+                <ScalarProperty Name="EMP_COUNT" ColumnName="EMP_COUNT" />
+                <ScalarProperty Name="COMPLAIN" ColumnName="COMPLAIN" />
+                <ScalarProperty Name="EMP_NAME" ColumnName="EMP_NAME" />
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+                <ScalarProperty Name="SPOILAGE" ColumnName="SPOILAGE" />
+                <ScalarProperty Name="VARIANCE" ColumnName="VARIANCE" />
+                <ScalarProperty Name="DAYEND20" ColumnName="DAYEND20" />
+                <ScalarProperty Name="DAYEND50" ColumnName="DAYEND50" />
+                <ScalarProperty Name="NETSALES" ColumnName="NETSALES" />
+                <ScalarProperty Name="NET_TARGET" ColumnName="NET_TARGET" />
+                <ScalarProperty Name="TARGET_SALES" ColumnName="TARGET_SALES" />
+                <ScalarProperty Name="YEAR" ColumnName="YEAR" />
+                <ScalarProperty Name="MONTH" ColumnName="MONTH" />
+                <ScalarProperty Name="OUTLET_NAME" ColumnName="OUTLET_NAME" />
+                <ScalarProperty Name="OUTLET_NO" ColumnName="OUTLET_NO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NEW_SALES_INCENTIVE_AREA_BNK">
+            <EntityTypeMapping TypeName="KHAS_BO_BUModel.NEW_SALES_INCENTIVE_AREA_BNK">
+              <MappingFragment StoreEntitySet="NEW_SALES_INCENTIVE_AREA_BNK">
+                <ScalarProperty Name="BANK_ACCT_NO" ColumnName="BANK_ACCT_NO" />
+                <ScalarProperty Name="EMPID" ColumnName="EMPID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

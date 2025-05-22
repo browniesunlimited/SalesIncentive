@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportSummary" targetNamespace="http://tempuri.org/ReportSummary.xsd" xmlns:mstns="http://tempuri.org/ReportSummary.xsd" xmlns="http://tempuri.org/ReportSummary.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReportSummary" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportSummary" msprop:Generator_UserDSName="ReportSummary">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dsSalesIncentive" msprop:Generator_TableClassName="dsSalesIncentiveDataTable" msprop:Generator_TableVarName="tabledsSalesIncentive" msprop:Generator_TablePropName="dsSalesIncentive" msprop:Generator_RowDeletingName="dsSalesIncentiveRowDeleting" msprop:Generator_RowChangingName="dsSalesIncentiveRowChanging" msprop:Generator_RowEvHandlerName="dsSalesIncentiveRowChangeEventHandler" msprop:Generator_RowDeletedName="dsSalesIncentiveRowDeleted" msprop:Generator_UserTableName="dsSalesIncentive" msprop:Generator_RowChangedName="dsSalesIncentiveRowChanged" msprop:Generator_RowEvArgName="dsSalesIncentiveRowChangeEvent" msprop:Generator_RowClassName="dsSalesIncentiveRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EMPID" msprop:Generator_ColumnVarNameInTable="columnEMPID" msprop:Generator_ColumnPropNameInRow="EMPID" msprop:Generator_ColumnPropNameInTable="EMPIDColumn" msprop:Generator_UserColumnName="EMPID" type="xs:string" minOccurs="0" />
+              <xs:element name="EMPLOYEE" msprop:Generator_ColumnVarNameInTable="columnEMPLOYEE" msprop:Generator_ColumnPropNameInRow="EMPLOYEE" msprop:Generator_ColumnPropNameInTable="EMPLOYEEColumn" msprop:Generator_UserColumnName="EMPLOYEE" type="xs:string" minOccurs="0" />
+              <xs:element name="BANK_ACCOUNT" msprop:Generator_ColumnVarNameInTable="columnBANK_ACCOUNT" msprop:Generator_ColumnPropNameInRow="BANK_ACCOUNT" msprop:Generator_ColumnPropNameInTable="BANK_ACCOUNTColumn" msprop:Generator_UserColumnName="BANK_ACCOUNT" type="xs:string" minOccurs="0" />
+              <xs:element name="INCENTIVE" msprop:Generator_ColumnVarNameInTable="columnINCENTIVE" msprop:Generator_ColumnPropNameInRow="INCENTIVE" msprop:Generator_ColumnPropNameInTable="INCENTIVEColumn" msprop:Generator_UserColumnName="INCENTIVE" type="xs:string" minOccurs="0" />
+              <xs:element name="PARTICULARS" msprop:Generator_ColumnVarNameInTable="columnPARTICULARS" msprop:Generator_ColumnPropNameInRow="PARTICULARS" msprop:Generator_ColumnPropNameInTable="PARTICULARSColumn" msprop:Generator_UserColumnName="PARTICULARS" type="xs:string" minOccurs="0" />
+              <xs:element name="MONTH" msprop:Generator_ColumnVarNameInTable="columnMONTH" msprop:Generator_ColumnPropNameInRow="MONTH" msprop:Generator_ColumnPropNameInTable="MONTHColumn" msprop:Generator_UserColumnName="MONTH" type="xs:string" minOccurs="0" />
+              <xs:element name="EMP_STATUS" msprop:Generator_ColumnVarNameInTable="columnEMP_STATUS" msprop:Generator_ColumnPropNameInRow="EMP_STATUS" msprop:Generator_ColumnPropNameInTable="EMP_STATUSColumn" msprop:Generator_UserColumnName="EMP_STATUS" type="xs:string" minOccurs="0" />
+              <xs:element name="BRANCH" msprop:Generator_ColumnVarNameInTable="columnBRANCH" msprop:Generator_ColumnPropNameInRow="BRANCH" msprop:Generator_ColumnPropNameInTable="BRANCHColumn" msprop:Generator_UserColumnName="BRANCH" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
